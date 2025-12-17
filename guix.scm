@@ -1,3 +1,6 @@
+;; SPDX-License-Identifier: MIT
+;; SPDX-FileCopyrightText: 2025 Jonathan D. A. Jewell <hyperpolymath>
+
 ;; Panoptes - Guix Package Definition
 ;; Run: guix shell -D -f guix.scm
 
@@ -10,16 +13,16 @@
 
 (define-public panoptes
   (package
-    (name "Panoptes")
-    (version "0.1.0")
-    (source (local-file "." "Panoptes-checkout"
+    (name "panoptes")
+    (version "3.0.0")
+    (source (local-file "." "panoptes-checkout"
                         #:recursive? #t
                         #:select? (git-predicate ".")))
     (build-system cargo-build-system)
-    (synopsis "Rust application")
-    (description "Rust application - part of the RSR ecosystem.")
-    (home-page "https://github.com/hyperpolymath/Panoptes")
-    (license license:agpl3+)))
+    (synopsis "Local AI-powered file scanner and renamer")
+    (description "Panoptes is a local AI-powered file scanner and renamer that uses the Moondream vision model via Ollama to intelligently rename files based on visual content. Supports images, PDFs, audio, archives, code files, and documents.")
+    (home-page "https://gitlab.com/hyperpolymath/panoptes")
+    (license license:expat)))
 
 ;; Return package for guix shell
 panoptes

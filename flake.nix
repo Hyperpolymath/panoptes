@@ -78,7 +78,7 @@
         # Package definition
         packages.default = pkgs.rustPlatform.buildRustPackage {
           pname = "panoptes";
-          version = "1.0.0";
+          version = "3.0.0";
 
           src = ./.;
 

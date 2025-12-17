@@ -5,99 +5,99 @@
 
 This document outlines the planned development direction for Panoptes.
 
-## Current Status: v1.0.0 (Stable)
+## Current Status: v3.0.0 (Stable)
 
-The initial stable release provides:
+Panoptes v3.0.0 includes comprehensive file analysis capabilities:
 
-- **Image analysis & renaming** - JPG, PNG, WebP, GIF, BMP, TIFF
-- **Moondream vision model** - Local AI via Ollama (~1.6GB)
-- **Graceful operation** - Signal handling, health checks
-- **Undo support** - History log with `panoptes-undo` tool
-- **Dry-run mode** - Preview changes before committing
-- **RSR Gold compliance** - Full documentation suite
+### Core Features (Completed)
+- [x] **Image analysis & renaming** - JPG, PNG, WebP, GIF, BMP, TIFF
+- [x] **Moondream vision model** - Local AI via Ollama (~1.6GB)
+- [x] **Graceful operation** - Signal handling, health checks
+- [x] **Undo support** - History log with `panoptes-undo` tool
+- [x] **Dry-run mode** - Preview changes before committing
+- [x] **RSR Gold compliance** - Full documentation suite
+- [x] **Web UI** - `panoptes-web` binary for browser-based interface
+- [x] **PDF processing** - Text extraction via `pdf-extract` and `lopdf`
+- [x] **Audio metadata** - ID3 tags, MP3 metadata via `symphonia`
+- [x] **Archive inspection** - ZIP, TAR, GZIP support
+- [x] **Code analysis** - Tree-sitter parsing for Rust, Python, JavaScript
+- [x] **Document parsing** - XML and Excel via `quick-xml` and `calamine`
+- [x] **Deduplication** - BLAKE3 hashing for file deduplication
+- [x] **SQLite database** - Tags and categories storage
 
-## Immediate Fixes (v1.0.x)
+## Immediate Fixes (v3.0.x)
 
-### v1.0.1 - Polish
+### v3.0.1 - Polish
 - [ ] Improve file stability detection (check file handle locks)
 - [ ] Add retry logic for transient Ollama failures
 - [ ] Systemd service file for daemon operation
 - [ ] Man page generation
 
-### v1.0.2 - Robustness
+### v3.0.2 - Robustness
 - [ ] Better handling of very large files
 - [ ] Configurable debounce timing
 - [ ] Log rotation support
 - [ ] Prometheus metrics endpoint (optional)
 
-## Short-term Goals (v1.x)
+## Short-term Goals (v3.x)
 
-### v1.1.0 - PDF Support
-- [ ] PDF first-page rasterization via `pdfium`
-- [ ] Text extraction fallback via `pdf-extract`
-- [ ] Document type detection
-- [ ] Configurable page selection for multi-page PDFs
-
-### v1.2.0 - Extended Image Formats
+### v3.1.0 - Extended Image Formats
 - [ ] HEIC/HEIF support (Apple photos)
 - [ ] RAW format support (CR2, NEF, ARW, DNG)
 - [ ] SVG thumbnail generation
 - [ ] AVIF support
 
-### v1.3.0 - Enhanced AI
+### v3.2.0 - Enhanced AI
 - [ ] Multiple model support (LLaVA, BakLLaVA, Phi-3)
 - [ ] Model auto-selection based on file size/type
 - [ ] Custom prompt templates via config
 - [ ] Confidence scoring (skip low-confidence renames)
 
-### v1.4.0 - Audio Files
+### v3.3.0 - Audio Transcription
 - [ ] Whisper integration for speech-to-text
 - [ ] Audio file naming from transcription
-- [ ] Music file metadata extraction
 - [ ] Podcast episode detection
 
-## Medium-term Goals (v2.x)
-
-### v2.0.0 - Plugin Architecture
-- [ ] Trait-based analyzer plugins
-- [ ] Dynamic plugin loading
-- [ ] Plugin configuration schema
-- [ ] Community plugin registry
-
-### v2.1.0 - Multi-Directory & Remote
-- [ ] Multiple watch directories
-- [ ] Remote Ollama support (TLS)
-- [ ] SSH tunnel support
-- [ ] Configuration hot-reload
-
-### v2.2.0 - Video Support
+### v3.4.0 - Video Support
 - [ ] FFmpeg integration for keyframe extraction
 - [ ] Video thumbnail analysis
 - [ ] Audio track transcription
 - [ ] Scene detection
 
-### v2.3.0 - Documents & Code
-- [ ] Office document text extraction
-- [ ] Code file analysis via DeepSeek Coder
-- [ ] Archive content inspection
-- [ ] Email file parsing
+## Medium-term Goals (v4.x)
 
-## Long-term Vision (v3.x)
+### v4.0.0 - Plugin Architecture
+- [ ] Trait-based analyzer plugins
+- [ ] Dynamic plugin loading
+- [ ] Plugin configuration schema
+- [ ] Community plugin registry
 
-### v3.0.0 - Advanced Features
-- [ ] Web UI dashboard
+### v4.1.0 - Multi-Directory & Remote
+- [ ] Multiple watch directories
+- [ ] Remote Ollama support (TLS)
+- [ ] SSH tunnel support
+- [ ] Configuration hot-reload
+
+### v4.2.0 - Advanced Documents
+- [ ] Office document deep extraction (DOCX, PPTX)
+- [ ] Email file parsing (EML, MSG)
+- [ ] More archive formats (7z, RAR)
+
+## Long-term Vision (v5.x)
+
+### v5.0.0 - Advanced Features
 - [ ] Category-based organization (auto-folders)
-- [ ] Tagging system
-- [ ] Duplicate detection
+- [ ] Advanced tagging system with hierarchies
 - [ ] Semantic search over renamed files
+- [ ] Machine learning model fine-tuning
 
-### v3.1.0 - Sync & Distribution
+### v5.1.0 - Sync & Distribution
 - [ ] CRDT-based distributed state
 - [ ] Multi-device synchronization
 - [ ] Offline-first rename queue
 - [ ] Conflict resolution UI
 
-### v3.2.0 - Platform Expansion
+### v5.2.0 - Platform Expansion
 - [ ] Native macOS app (FSEvents optimization)
 - [ ] Windows service
 - [ ] Mobile companion app
@@ -140,7 +140,9 @@ See [CONTRIBUTING.adoc](CONTRIBUTING.adoc) for guidelines.
 
 | Version | Status | Support Until |
 |---------|--------|---------------|
-| 1.0.x | **Current** | Active development |
+| 3.0.x | **Current** | Active development |
+| 2.x | Maintenance | Security fixes only |
+| 1.x | Legacy | Unsupported |
 | 0.x | Legacy | Unsupported |
 
 ## Changelog
@@ -149,4 +151,4 @@ See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 
 ---
 
-*Last updated: 2025-11-27*
+*Last updated: 2025-12-17*
